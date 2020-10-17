@@ -66,7 +66,7 @@ public class ReplaceStatIdsListener extends DerivedExpressionBaseListener {
     }
 
 
-    private static boolean isAggregateClause(ParserRuleContext ctx) {Ï
+    private static boolean isAggregateClause(ParserRuleContext ctx) {
         while (ctx.parent != null) {
             ctx = ctx.getParent();
             if (ctx.getClass().isAssignableFrom(DerivedExpressionParser.AggregateClauseContext.class)) {

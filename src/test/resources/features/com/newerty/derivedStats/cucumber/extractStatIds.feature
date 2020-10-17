@@ -24,15 +24,15 @@ Feature: Extract StatIds
     And The get statIds response should contain this many statIds
       | 4 |
 
-#  Scenario Outline: Invalid expressions aren't allowed
-#    When Get dependent statIds for the following invalid expression: <expression>
-#    Then Expression evaluation exception is thrown of type "com.ea.gs.expression.parser.ExpressionEvaluationException" containing <message>
-#    Examples:
-#      | expression                  | message              |
-#      | foo = XYZ(kills{map : "*"}) | mismatched input '(' |
-#      | foo = kills(map : "dust2"}  | mismatched input '(' |
-#      | foo = shots + 3.0)          | extraneous input ')' |
-#      | foo = shots => 3.0          | mismatched input '=' |
-#      | foo = shots =< 3.0          | mismatched input '=' |
+  Scenario Outline: Invalid expressions aren't allowed
+    When Get dependent statIds for the following invalid expression: <expression>
+    Then Expression evaluation exception is thrown of type "com.newerty.derivedStats.ExpressionEvaluationException" containing <message>
+    Examples:
+      | expression                  | message              |
+      | foo = XYZ(kills{map : "*"}) | mismatched input '(' |
+      | foo = kills(map : "dust2"}  | mismatched input '(' |
+      | foo = shots + 3.0)          | extraneous input ')' |
+      | foo = shots => 3.0          | mismatched input '=' |
+      | foo = shots =< 3.0          | mismatched input '=' |
 
 
